@@ -28,15 +28,3 @@ pip install --editable .
 
 注意：这个方法需要你的环境中已经安装了 setuptools 和 pip。
 如果还没有安装，你可以使用 pip install setuptools pip 命令来安装。
-
-
-
-
-
-
-
-
-
-
-------------------设计------------------
-注册抽象工厂
