@@ -1,0 +1,42 @@
+要使 Python 脚本能够像命令行工具一样运行，你需要创建一个入口点（entry point）。
+这通常通过在 setup.py 文件中设置完成。
+以下是一个基本的 setup.py 文件示例，它将 fje.py 文件设置为一个命令行工具：
+
+from setuptools import setup
+
+setup(
+    name='fje',
+    version='0.1',
+    py_modules=['fje'],
+    install_requires=[
+        'Click',
+    ],
+    entry_points='''
+        [console_scripts]
+        fje=fje:main
+    ''',
+)
+
+在这个 setup.py 文件中，entry_points 部分定义了一个命令行工具 fje，它将调用 fje.py 文件中的 main 函数。
+
+然后，你可以在命令行中使用以下命令来安装你的脚本：
+
+pip install --editable .
+
+这将会安装你的脚本，并将其设置为一个命令行工具。
+然后，你就可以在任何地方使用 fje -f <json file> -s <style> -i <icon family> 命令来运行你的脚本了。
+
+注意：这个方法需要你的环境中已经安装了 setuptools 和 pip。
+如果还没有安装，你可以使用 pip install setuptools pip 命令来安装。
+
+
+
+
+
+
+
+
+
+
+------------------设计------------------
+注册抽象工厂
